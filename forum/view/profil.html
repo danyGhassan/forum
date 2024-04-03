@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+        <link href="/assets/css/profil.css" rel="stylesheet">
+        <title>profil</title>
+    </head>
+    
+    <title>profil</title>
+  </head>
+  <body> 
+    <a class = "deconnexion" href="/deco">Déconnectez vous</a>
+    <a class = "retourhome" href="/home">HOME</a>
+    <form action="/changePseudo" method="POST">
+        <label for="nouveauPseudo">Changez de pseudo :</label>
+        <input type="text" id="nouveauPseudo" name="nouveauPseudo" required>
+        <button type="submit">Changer de pseudo</button>
+    </form>
+    <form action="/changeEmail" method="POST">
+        <label for="nouveauMail">Changez de Mail :</label>
+        <input type="text" id="nouveauMail" name="nouveauMail" required>
+        <button type="submit">Changer de Email</button>
+    </form>
+    <form action="/changeMDP" method="POST">
+        <label for="nouveauMDP">Changez de Mot De Passe :</label>
+        <input type="text" id="nouveauMDP" name="nouveauMDP" required>
+        <button type="submit">Changer de Mot De Passe</button>
+    </form>
+   
+    <h1>Profil</h1>
+    <ul>
+        {{range .Users}}
+            <li>{{.ID}} - {{.Username}} ({{.Email}})</li>
+        {{end}}
+    </ul>
+    <h1 class = "posts">Vos posts</h1>
+    <ul>
+        {{range .Posts}}
+            <form id="post{{.ID}}" action="/changePost" method="POST">
+                <input type="hidden" name="postID" value="{{.ID}}">
+                <label for="post">Modifiez votre post : 
+                    <input type="text" id="post" name="post" placeholder="Modifiez votre post.. " required>
+                </label>
+                <button type="submit">publiez</button>
+            </form>
+            <form id="deleteForm{{.ID}}" action="/deletePost" method="POST">
+                <input type="hidden" name="postID" value="{{.ID}}">
+                <button type="submit">Supprimer le post</button>
+            </form>
+            <li>{{.ID}} - {{.Content}} {{.Category}} ({{.Likes}}) {{.Dislikes}} {{.IdUsers}}</li>
+        {{end}}
+    </ul>
+    <h1 class = "comms">Vos commentaires</h1>
+    <ul>
+        {{range .Comments}}
+            <form id="commentaire{{.ID}}" action="/changeCom" method="POST">
+                <input type="hidden" name="commentaireID" value="{{.ID}}">
+                <label for="commentaire">Modifiez votre commentaire : 
+                    <input type="text" id="commentaire" name="commentaire" placeholder="Modifiez votre commentaire.. " required>
+                </label>
+                <button type="submit">publiez</button>
+            </form>
+            <form id="deleteForm{{.ID}}" action="/deleteCom" method="POST">
+                <input type="hidden" name="commentaireID" value="{{.ID}}">
+                <button type="submit">Supprimer le commentaire</button>
+            </form>
+            <li>{{.ID}} - {{.Content}}  ({{.Likes}}) {{.Dislikes}} </li>
+        {{end}}
+    </ul>
+  </body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+body {
+    background-color: #6a8ca1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    position: relative;
+    font-family: 'Palatino', sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #f5f5f5;
+}
+
+header{
+    display: flex;
+    position: relative;
+    /* justify-content: space-around; */
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    color: transparent;
+    height: 100px;
+}
+
+li{
+    width: 80;
+    height: 10em;
+    background-color: #7b7263;
+    margin: 2.5% auto;
+    list-style-type: none;
+    border-radius: 1em;
+}
+
+.com{
+    padding-top: 10vh;
+}
+
+.flex-child:first-child{
+    display: flex;
+    width: 5%;
+    margin-left: 2.5%;
+    justify-content: center;
+}
+
+.flex-child:nth-child(2){
+    display: flex;
+    width: 30%;
+    margin-left: 27.5%;
+    margin-right: 30%;
+}
+
+.flex-child:first-child{
+    display: flex;
+    width: 5%;
+    margin-right: 2.5%;
+    justify-content: center;
+}
+
+
+.txt{
+    display: flex;
+    position: relative;
+    background-color: #3d352a;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 50em;
+}
+
+.logo{
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-family: 'Palatino', sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.align-content{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.posts, .comments{
+    width: 50%;
+    flex-direction: column;
+}
+
+.postscontent, .commentscontent{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+    display: flex;
+    width: 32.5%;
+    height: 2.5em;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    border: #7b7263 6px solid;
+    border-radius: 5em;
+    margin: 0 2.5%;
+    top: 5;
+}
+
+input[type=text]::placeholder{
+    position: relative;
+    font-size: 15px;
+    font-weight: bolder;
+    color : #3d352a;
+    font-family: 'Palatino', sans-serif;
+}
